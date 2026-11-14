@@ -1,0 +1,36 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        # 这套插件要跨平台可用，所以三个平台都跑一遍。
+        # Windows 尤其重要：路径分隔符、符号链接、进程名都和 POSIX 不同。
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node: ['22', '24']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: 语法检查
+        run: |
+          node --check lib/index.js
+          node --check lib/parse.js
+          node --check lib/paths.js
+          node --check lib/policy.js
+
+      - name: 运行测试
+        run: node test/generic.test.mjs
