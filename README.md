@@ -1,6 +1,12 @@
 # dsh-rules-guard · 规则守卫
 
+[![test](https://github.com/tuifeibenfeifei/dsh-rules-guard/actions/workflows/test.yml/badge.svg)](https://github.com/tuifeibenfeifei/dsh-rules-guard/actions/workflows/test.yml)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![dsh](https://img.shields.io/badge/dsh-%3E%3D0.2.1--0-8b5cf6.svg)](https://github.com/deepseek-ai/deepseek-harness)
+
 把 AI 助手「知道规则但不遵守」变成**工具层硬拦截**。
+
+> 配套插件：[dsh-rules](https://github.com/tuifeibenfeifei/dsh-rules) —— 提供 6 层 28 条通用规则模板和设置页编辑器。
 
 ## 解决什么问题
 
