@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Rules Guard",
+    "description": "Turns the most dangerous rules into hard tool-level denials: killing the DSH process, writing production storage, or renaming a plugin directory that node_modules links to is rejected before the command runs."
+  }
+}

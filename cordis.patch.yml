@@ -1,0 +1,7 @@
+# 挂载 dsh-rules-guard 宿主插件。
+#
+# 纯宿主侧插件：通过 ctx.tools.guard() 在工具执行前做硬拦截，
+# 把 AGENTS.md 里「不可逆操作前停下问」这类靠自觉的约束变成物理拦截。
+- insert:
+    - id: rules-guard
+      name: dsh-rules-guard

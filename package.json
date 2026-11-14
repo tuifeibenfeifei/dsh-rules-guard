@@ -1,0 +1,38 @@
+{
+  "name": "dsh-rules-guard",
+  "version": "0.1.0",
+  "displayName": "DSH 规则守卫",
+  "description": "把 AI 助手「知道规则但不遵守」变成工具层硬拦截：终止自身进程、写入运行数据、改名已加载目录，命中即拒绝执行。不写死路径、不穷举命令名，任何机器上的 DSH 都适用。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "locale",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "guard",
+    "safety"
+  ],
+  "license": "MIT",
+  "engines": {
+    "dsh": ">=0.2.1-0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
